@@ -3,6 +3,7 @@ Section: python
 Priority: extra
 Maintainer: Shell.Xu <shell909090@gmail.com>
 Build-Depends: debhelper (>= 8),
+               dh-python,
                python-all,
                python-setuptools,
 Standards-Version: 3.9.8
@@ -17,6 +18,7 @@ Depends: lsb-base (>= 3.0-6),
          python-pkg-resources,
          ${misc:Depends},
          ${python:Depends},
+XB-Python-Version: ${python:Versions}
 Description: Fast tunnel proxy that helps you bypass firewalls
  A secure socks5 proxy, designed to protect your Internet traffic.
  .
