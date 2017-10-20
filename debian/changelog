@@ -1,10 +1,11 @@
-shadowsocks (2.9.0-3) UNRELEASED; urgency=medium
+shadowsocks (2.9.0-3) unstable; urgency=medium
 
+  [ Shell.Xu ]
   * Add Python versions fields.
   * Cleanup build and eff-info in auto-clean.
   * Add build dependence: dh-python.
 
- -- Shell.Xu <shell909090@gmail.com>  Fri, 20 Oct 2017 22:25:44 +0800
+ -- Shell.Xu <shell909090@gmail.com>  Fri, 20 Oct 2017 22:29:09 +0800
 
 shadowsocks (2.9.0-2) unstable; urgency=medium
 
