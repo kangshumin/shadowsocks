@@ -39,22 +39,28 @@ def main():
 
     config = shell.get_config(True)
     daemon.daemon_exec(config)
-
-    logging.info("starting local at %s:%d" %
-                 (config['local_address'], config['local_port']))
-
     dns_resolver = asyncdns.DNSResolver()
-    tcp_server = tcprelay.TCPRelay(config, dns_resolver, True)
-    udp_server = udprelay.UDPRelay(config, dns_resolver, True)
     loop = eventloop.EventLoop()
     dns_resolver.add_to_loop(loop)
-    tcp_server.add_to_loop(loop)
-    udp_server.add_to_loop(loop)
+    _config = config.copy()
+    _config["local_port"] = _config["tunnel_port"]
+    logging.info("starting tcp tunnel at %s:%d forward to %s:%d" %
+                 (_config['local_address'], _config['local_port'],
+                  _config['tunnel_remote'], _config['tunnel_remote_port']))
+    tunnel_tcp_server = tcprelay.TCPRelay(_config, dns_resolver, True)
+    tunnel_tcp_server._is_tunnel = True
+    tunnel_tcp_server.add_to_loop(loop)
+    logging.info("starting udp tunnel at %s:%d forward to %s:%d" %
+                 (_config['local_address'], _config['local_port'],
+                     _config['tunnel_remote'], _config['tunnel_remote_port']))
+    tunnel_udp_server = udprelay.UDPRelay(_config, dns_resolver, True)
+    tunnel_udp_server._is_tunnel = True
+    tunnel_udp_server.add_to_loop(loop)
 
     def handler(signum, _):
         logging.warn('received SIGQUIT, doing graceful shutting down..')
-        tcp_server.close(next_tick=True)
-        udp_server.close(next_tick=True)
+        tunnel_tcp_server.close(next_tick=True)
+        tunnel_udp_server.close(next_tick=True)
     signal.signal(getattr(signal, 'SIGQUIT', signal.SIGTERM), handler)
 
     def int_handler(signum, _):

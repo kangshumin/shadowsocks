@@ -2,11 +2,11 @@ Source: shadowsocks
 Section: python
 Priority: extra
 Maintainer: Shell.Xu <shell909090@gmail.com>
-Build-Depends: debhelper (>= 8),
+Build-Depends: debhelper (>= 9),
                dh-python,
                python-all,
                python-setuptools,
-Standards-Version: 3.9.8
+Standards-Version: 4.1.5
 Homepage: https://github.com/shadowsocks/shadowsocks
 Vcs-Git: https://github.com/shell909090/shadowsocks.git
 Vcs-Browser: https://github.com/shell909090/shadowsocks
