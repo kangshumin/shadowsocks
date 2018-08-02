@@ -1,1 +1,4 @@
-debian/config.json etc/shadowsocks/
+debian/shadowsocks-*.service lib/systemd/system
+config.json.example etc/shadowsocks/
+debian/local.json etc/shadowsocks/
+debian/server.json etc/shadowsocks/

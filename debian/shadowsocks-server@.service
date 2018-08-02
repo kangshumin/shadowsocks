@@ -1,0 +1,15 @@
+[Unit]
+Description=Shadowsocks server mode service
+Documentation=man:ssserver(1)
+After=network-online.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/bin/ssserver -q -c /etc/shadowsocks/%i.json
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

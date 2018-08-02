@@ -1,6 +1,10 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+PYTHONS:=$(shell pyversions -vr)
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
 %:
 	dh $@ --with python2 --buildsystem=python_distutils
 
@@ -8,3 +12,9 @@ override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf build
 	rm -rf shadowsocks.egg-info
+
+override_dh_auto_install:
+	set -e ; for pyvers in $(PYTHONS); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/shadowsocks; \
+	done

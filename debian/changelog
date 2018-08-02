@@ -1,3 +1,11 @@
+shadowsocks (3.0.0-1) UNRELEASED; urgency=medium
+
+  [ Shell.Xu ]
+  * Upstream update.
+  * Change init.d to systemd service.
+
+ -- Shell.Xu <shell909090@gmail.com>  Tue, 31 Jul 2018 20:27:29 +0800
+
 shadowsocks (2.9.0-3) unstable; urgency=medium
 
   [ Shell.Xu ]
