@@ -1,4 +1,5 @@
-debian/shadowsocks-*.service lib/systemd/system
+debian/shadowsocks-*.service lib/systemd/system/
 config.json.example etc/shadowsocks/
 debian/local.json etc/shadowsocks/
 debian/server.json etc/shadowsocks/
+utils/fail2ban/shadowsocks.conf etc/fail2ban/filter.d/

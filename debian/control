@@ -18,6 +18,7 @@ Depends: lsb-base (>= 3.0-6),
          python-pkg-resources,
          ${misc:Depends},
          ${python:Depends},
+Suggests: fail2ban
 XB-Python-Version: ${python:Versions}
 Description: Fast tunnel proxy that helps you bypass firewalls
  A secure socks5 proxy, designed to protect your Internet traffic.
