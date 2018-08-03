@@ -5,6 +5,7 @@ shadowsocks (3.0.0~2018.07.31.git.2c107740eb-1) UNRELEASED; urgency=medium
   * Change init.d to systemd service.
   * Remove patches because it merged to upstream.
   * Update debhelper version from 8 to 11.
+  * Add fail2ban utils.
 
  -- Shell.Xu <shell909090@gmail.com>  Tue, 31 Jul 2018 20:27:29 +0800
 
