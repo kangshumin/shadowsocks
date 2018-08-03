@@ -1,6 +1,6 @@
 Source: shadowsocks
 Section: python
-Priority: extra
+Priority: optional
 Maintainer: Shell.Xu <shell909090@gmail.com>
 Build-Depends: debhelper (>= 11),
                dh-python,

@@ -1,4 +1,4 @@
-shadowsocks (3.0.0~2018.07.31.git.2c107740eb-1) UNRELEASED; urgency=medium
+shadowsocks (3.0.0~2018.07.31.git.2c107740eb-1) unstable; urgency=medium
 
   [ Shell.Xu ]
   * Upstream update.
@@ -6,8 +6,9 @@ shadowsocks (3.0.0~2018.07.31.git.2c107740eb-1) UNRELEASED; urgency=medium
   * Remove patches because it merged to upstream.
   * Update debhelper version from 8 to 11.
   * Add fail2ban utils.
+  * Change priority to optional, according to policy.
 
- -- Shell.Xu <shell909090@gmail.com>  Tue, 31 Jul 2018 20:27:29 +0800
+ -- Shell Xu <shell909090@gmail.com>  Fri, 03 Aug 2018 22:50:36 +0800
 
 shadowsocks (2.9.0-3) unstable; urgency=medium
 
